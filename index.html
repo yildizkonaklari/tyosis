@@ -1,680 +1,218 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TYOSİS - İşletmenizi Dijitale Taşıyın, Yönetimi Kolaylaştırın</title>
-    <link rel="stylesheet" href="style.css"> <link rel="icon" href="logo.png" type="image/png"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <style>
-        /* TEMEL SIFIRLAMA VE GENEL STİLLER (style.css dosyanıza taşıyın) */
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f8f8;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-        h1 { font-size: 2.8em; text-align: center; }
-        h2 { font-size: 2.2em; text-align: center; margin-top: 40px;}
-        h3 { font-size: 1.8em; }
-        p { margin-bottom: 10px; }
-        a { text-decoration: none; color: #3498db; }
-        a:hover { text-decoration: underline; }
-
-        /* HEADER */
-        .main-header {
-            background-color: #ffffff;
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo img {
-            height: 50px; /* Logonuzun boyutunu ayarlayın */
-        }
-        .main-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        .main-nav ul li {
-            margin-left: 30px;
-        }
-        .main-nav ul li a {
-            color: #2c3e50;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .main-nav ul li a:hover {
-            color: #3498db;
-        }
-        .nav-toggle {
-            display: none; /* Mobil menü butonu, varsayılan olarak gizli */
-            font-size: 2em;
-            background: none;
-            border: none;
-            color: #2c3e50;
-            cursor: pointer;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, #3498db, #8e44ad); /* Mavi-Mor gradient */
-            color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Opaklık ekleyerek metni daha okunur hale getirir */
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            color: #fff;
-        }
-        .hero p {
-            font-size: 1.5em;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-            color: #f0f0f0;
-        }
-        .hero-buttons .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
-            margin: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .hero-buttons .btn-primary {
-            background-color: #2ecc71; /* Parlak yeşil */
-            color: #fff;
-            border: none;
-        }
-        .hero-buttons .btn-primary:hover {
-            background-color: #27ae60;
-            transform: translateY(-2px);
-        }
-        .hero-buttons .btn-secondary {
-            background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
-        }
-        .hero-buttons .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* PROBLEM SECTION */
-        .problems {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .problem-item {
-            text-align: center;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            background-color: #fdfdfd;
-        }
-        .problem-item i {
-            font-size: 3em;
-            color: #e74c3c; /* Kırmızımsı ton */
-            margin-bottom: 15px;
-        }
-        .problem-item h3 {
-            font-size: 1.4em;
-            color: #e74c3c;
-        }
-        .problem-item p {
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* SOLUTIONS SECTION */
-        .solutions {
-            padding: 80px 0;
-            background-color: #f0f4f7;
-        }
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .solution-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .solution-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-        .solution-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-        .solution-card-content {
-            padding: 25px;
-        }
-        .solution-card-content i {
-            font-size: 2.5em;
-            color: #3498db;
-            margin-bottom: 15px;
-        }
-        .solution-card-content h3 {
-            font-size: 1.5em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .solution-card-content p {
-            color: #666;
-            margin-bottom: 20px;
-            min-height: 60px; /* Metin uzunluğundan bağımsız yükseklik */
-        }
-        .solution-card-content .btn-link {
-            display: inline-block;
-            color: #3498db;
-            font-weight: bold;
-            border: 1px solid #3498db;
-            padding: 8px 20px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        .solution-card-content .btn-link:hover {
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        /* FEATURES SECTION */
-        .features {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .feature-item {
-            text-align: center;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #eee;
-            background-color: #fcfcfc;
-            transition: all 0.3s ease;
-        }
-        .feature-item:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transform: translateY(-5px);
-        }
-        .feature-item i {
-            font-size: 3.5em;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .feature-item h3 {
-            font-size: 1.6em;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        .feature-item p {
-            color: #666;
-            font-size: 1.05em;
-        }
-
-        /* HOW TO START SECTION */
-        .how-to-start {
-            padding: 80px 0;
-            background-color: #f0f4f7;
-            text-align: center;
-        }
-        .how-to-start .steps-grid {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 50px;
-            flex-wrap: wrap; /* Mobil uyumluluk için */
-        }
-        .step-item {
-            flex: 0 0 280px; /* Genişlik sabitleme */
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            position: relative;
-            z-index: 1;
-        }
-        .step-item span.step-number {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #8e44ad; /* Mor */
-            color: #fff;
-            font-size: 1.8em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-        .step-item h3 {
-            color: #8e44ad;
-            margin-bottom: 10px;
-        }
-        .step-item p {
-            color: #666;
-        }
-
-        /* CTA SECTION (CLOSING) */
-        .cta-closing {
-            background-color: #2c3e50; /* Koyu gri/lacivert */
-            color: #fff;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .cta-closing h2 {
-            color: #fff;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .cta-closing p {
-            font-size: 1.2em;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            color: #f0f0f0;
-        }
-        .cta-closing .btn-primary {
-            background-color: #2ecc71; /* Parlak yeşil */
-            color: #fff;
-            border: none;
-        }
-        .cta-closing .btn-primary:hover {
-            background-color: #27ae60;
-            transform: translateY(-2px);
-        }
-
-        /* FOOTER */
-        .main-footer {
-            background-color: #333;
-            color: #f0f0f0;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.9em;
-        }
-        .main-footer .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: flex-start;
-            text-align: left;
-        }
-        .footer-col {
-            flex: 1;
-            min-width: 250px;
-            margin: 20px;
-        }
-        .footer-col h4 {
-            color: #fff;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        .footer-col ul li a {
-            color: #ccc;
-            transition: color 0.3s ease;
-        }
-        .footer-col ul li a:hover {
-            color: #3498db;
-        }
-        .social-links a {
-            color: #fff;
-            font-size: 1.5em;
-            margin-right: 15px;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: #3498db;
-        }
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            margin-top: 40px;
-            width: 100%;
-        }
-
-
-        /* RESPONSIVE DÜZENLEMELER */
-        @media (max-width: 768px) {
-            .main-nav {
-                display: none; /* Mobil menü gizli */
-                width: 100%;
-                order: 3; /* Menüyü aşağıya alır */
-            }
-            .main-nav.active {
-                display: block; /* Mobil menü aktifken göster */
-            }
-            .main-nav ul {
-                flex-direction: column;
-                text-align: center;
-                margin-top: 15px;
-            }
-            .main-nav ul li {
-                margin: 10px 0;
-            }
-            .nav-toggle {
-                display: block; /* Mobil butonu göster */
-            }
-            .main-header .container {
-                flex-wrap: wrap;
-            }
-
-            .hero h1 {
-                font-size: 2.5em;
-            }
-            .hero p {
-                font-size: 1.2em;
-            }
-            .hero-buttons .btn {
-                width: 80%;
-                display: block;
-                margin: 10px auto;
-            }
-            
-            h1 { font-size: 2.2em; }
-            h2 { font-size: 1.8em; }
-            h3 { font-size: 1.4em; }
-
-            .problem-grid, .solution-grid, .feature-grid {
-                grid-template-columns: 1fr;
-            }
-            .step-item {
-                flex: 0 0 90%;
-            }
-            .how-to-start .steps-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tyosis – Takip Yönetim Sistemi | İşletmeler için dijital randevu, müşteri ve ödeme takip çözümleri.">
+  <title>Tyosis – Takip Yönetim Sistemi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #0052cc;
+      --color-accent: #007bff;
+      --color-text: #444;
+      --color-bg: #f9f9fb;
+      --radius-card: 12px;
+      --transition-base: 0.3s;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--color-bg); color: var(--color-text); line-height:1.6; }
+    nav {
+      position: sticky; top:0; background:white; z-index:1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display:flex; justify‐content: center; padding: 15px 20px;
+    }
+    nav a {
+      margin: 0 15px; text-decoration:none; color: var(--color-text); font-weight:600;
+      transition: color var(--transition-base);
+    }
+    nav a:hover, nav a:focus { color: var(--color-accent); }
+    header {
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+      color: white; text-align:center; padding:100px 20px;
+    }
+    header h1 { font-size:2.75rem; letter-spacing:1px; margin-bottom:10px; }
+    header p { font-size:1.2rem; max-width:600px; margin: auto; }
+    section { padding:80px 20px; max-width:1100px; margin:auto; }
+    h2 { font-size:2.25rem; text-align:center; margin-bottom:35px; color: var(--color-primary); }
+    .about { text-align:center; font-size:1.1rem; max-width:800px; margin:auto; color: #555; }
+    .products {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap:30px; margin-top:40px;
+    }
+    .card {
+      background:white; border-radius: var(--radius-card); padding:30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    .card h3 { color: var(--color-accent); margin-bottom:12px; font-size:1.25rem; }
+    .card p { color: #666; font-size:0.95rem; line-height:1.4; }
+    .card button {
+      margin-top:20px; padding:12px 20px; font-size:1rem;
+      background: var(--color-accent); color:white; border:none;
+      border-radius:8px; cursor:pointer; transition: background var(--transition-base);
+    }
+    .card button:hover { background: var(--color-primary); }
+    /* Demo & Contact */
+    .form-container { max-width:500px; margin:auto; }
+    .form-container form {
+      display:flex; flex-direction:column; gap:17px;
+    }
+    .form-container input, .form-container select, .form-container textarea {
+      padding:12px; font-size:1rem; border:1px solid #ccc; border-radius:8px;
+    }
+    .form-container button.submit {
+      background: var(--color-accent); color:white; border:none; padding:14px;
+      font-size:1.05rem; border-radius:8px; cursor:pointer; transition: background var(--transition-base);
+    }
+    .form-container button.submit:hover { background: var(--color-primary); }
+    #successMsg { display:none; text-align:center; color: #28a745; margin-top:15px; font-weight:600; }
+    /* WhatsApp floating button */
+    .whatsapp-float {
+      position: fixed; bottom:25px; right:25px; width:60px; height:60px;
+      background:#25D366; color:white; border-radius:50%; font-size:30px;
+      text-align:center; line-height:60px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index:999;
+      transition: transform var(--transition-base);
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    footer {
+      background: #0a1931; color:white; text-align:center; padding:30px 20px; font-size:0.9rem;
+    }
+    .logo { font-weight:700; font-size:1.5rem; color: var(--color-accent); }
+    @media (max-width:768px) {
+      header h1 { font-size:2.2rem; }
+      header p { font-size:1rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logo.png" alt="Tyosis Logo"> </a>
-            </div>
-            <button class="nav-toggle" aria-label="Menüyü Aç/Kapat">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#solutions">Çözümlerimiz</a></li>
-                    <li><a href="#features">Özellikler</a></li>
-                    <li><a href="fiyatlandirma.html">Fiyatlandırma</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                    <li><a href="iletisim.html">İletişim & Destek</a></li>
-                    <li><a href="#" class="btn btn-primary">Ücretsiz Demo Talep Et</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <nav>
+    <a href="#home">Ana Sayfa</a>
+    <a href="#about">Hakkımızda</a>
+    <a href="#products">Ürünler</a>
+    <a href="#demo">Demo Talep</a>
+    <a href="#contact">İletişim</a>
+  </nav>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>İşletmenizi Dijitale Taşıyın, Yönetimi Kolaylaştırın.</h1>
-                <p>Tyosis, veteriner, kuaför, kurs merkezi ve site yönetimi gibi küçük işletmeler için sektöre özel, bulut tabanlı takip ve yönetim çözümleri sunar.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">Ücretsiz Demo Talep Edin</a>
-                    <a href="#solutions" class="btn btn-secondary">Çözümlerimizi Keşfedin</a>
-                </div>
-            </div>
-        </section>
+  <header id="home">
+    <h1><span class="logo">Tyosis</span> – Takip Yönetim Sistemi</h1>
+    <p>Akıllı Takip, Kolay Yönetim. İşletmenizi dijitalleştirin.</p>
+  </header>
 
-        <section id="problems" class="problems">
-            <div class="container">
-                <h2>Bu Sorunlar Tanıdık Geliyor mu?</h2>
-                <div class="problem-grid">
-                    <div class="problem-item">
-                        <i class="fas fa-calendar-times"></i> <h3>Karışık Randevular</h3>
-                        <p>Defterde kaybolan randevular, çakışan saatler sizi yoruyor mu?</p>
-                    </div>
-                    <div class="problem-item">
-                        <i class="fas fa-hand-holding-usd"></i> <h3>Ödeme Takip Zorluğu</h3>
-                        <p>Geciken aidatların, unutulan ödemelerin takibinde zorlanıyor musunuz?</p>
-                    </div>
-                    <div class="problem-item">
-                        <i class="fas fa-file-alt"></i> <h3>Manuel Kayıtlar</h3>
-                        <p>Müşteri geçmişini veya hizmet detaylarını bulmak zamanınızı mı alıyor?</p>
-                    </div>
-                    <div class="problem-item">
-                        <i class="fas fa-receipt"></i> <h3>Makbuz Kesme Yükü</h3>
-                        <p>Manuel makbuz kesmek, gelir-gider hesabı yapmak sizi yavaşlatıyor mu?</p>
-                    </div>
-                </div>
-                <p style="text-align: center; font-size: 1.2em; margin-top: 40px; color: #555;">Artık bunlarla vakit kaybetmeyin.</p>
-            </div>
-        </section>
+  <section id="about">
+    <h2>Hakkımızda</h2>
+    <p class="about">Tyosis, işletmelerin müşteri, randevu ve ödeme süreçlerini kolayca yönetmesini sağlayan bir yazılım şirketidir. Amacımız, teknolojiyi herkes için erişilebilir hale getirerek iş takibini kolaylaştırmaktır. Güvenilir, yenilikçi ve kullanıcı dostu çözümler geliştiriyoruz.</p>
+  </section>
 
-        <section id="solutions" class="solutions">
-            <div class="container">
-                <h2>Sektörünüze Özel Çözümlerimiz</h2>
-                <div class="solution-grid">
-                    <div class="solution-card">
-                        <img src="veteriner-cozum.jpg" alt="Veteriner Klinik Yönetim Sistemi"> <div class="solution-card-content">
-                            <i class="fas fa-paw"></i>
-                            <h3>Veteriner Klinik Yönetim Sistemi</h3>
-                            <p>Hasta takibi, otomatik aşı takvimi, stok yönetimi ile kliniğinizin kontrolü sizde.</p>
-                            <a href="veteriner-sistemi.html" class="btn-link">Detayları İncele &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="solution-card">
-                        <img src="kuaför-cozum.jpg" alt="Kuaför & Güzellik Merkezi Yönetim Sistemi"> <div class="solution-card-content">
-                            <i class="fas fa-cut"></i>
-                            <h3>Kuaför & Güzellik Merkezi Yönetim Sistemi</h3>
-                            <p>Online randevu, personel takibi, müşteri sadakati ve kasa yönetimi.</p>
-                            <a href="kuaför-sistemi.html" class="btn-link">Detayları İncele &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="solution-card">
-                        <img src="kurs-cozum.jpg" alt="Kurs & Sanat Evi Yönetim Sistemi"> <div class="solution-card-content">
-                            <i class="fas fa-book-open"></i>
-                            <h3>Kurs & Sanat Evi Yönetim Sistemi</h3>
-                            <p>Öğrenci kaydı, taksitli ödeme takibi, sınıf ve veli yönetimini kolaylaştırın.</p>
-                            <a href="kurs-sistemi.html" class="btn-link">Detayları İncele &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="solution-card">
-                        <img src="site-cozum.jpg" alt="Apartman & Site Yönetim Sistemi"> <div class="solution-card-content">
-                            <i class="fas fa-building"></i>
-                            <h3>Apartman & Site Yönetim Sistemi</h3>
-                            <p>Aidat takibi, online tahsilat, gider yönetimi ve duyuru sistemi ile şeffaf olun.</p>
-                            <a href="site-sistemi.html" class="btn-link">Detayları İncele &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section id="products">
+    <h2>Ürünlerimiz</h2>
+    <div class="products">
+      <div class="card">
+        <h3>🏢 Aidat Takip Sistemi</h3>
+        <p>Site ve apartman yöneticileri için gelir, gider, borç ve ödeme takibini kolayca yapın.</p>
+        <button>Detaylı Bilgi</button>
+      </div>
+      <div class="card">
+        <h3>🐾 Veteriner Yönetim Sistemi</h3>
+        <p>Hasta kaydı, randevu planlama ve ödeme takibini dijital ortamda yönetin.</p>
+        <button>Detaylı Bilgi</button>
+      </div>
+      <div class="card">
+        <h3>✂️ Kuaför Yönetim Sistemi</h3>
+        <p>Randevu planlama, müşteri geçmişi ve kasa takibini tek ekrandan yönetin.</p>
+        <button>Detaylı Bilgi</button>
+      </div>
+      <div class="card">
+        <h3>🎨 Sanat Evi Kurs Yönetim Sistemi</h3>
+        <p>Kurs planı, öğrenci kaydı ve ödeme takibini kolayca organize edin.</p>
+        <button>Detaylı Bilgi</button>
+      </div>
+    </div>
+  </section>
 
-        <section id="features" class="features">
-            <div class="container">
-                <h2>İşinizi Kolaylaştıran Güçlü Altyapı</h2>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-file-invoice-dollar"></i>
-                        <h3>Hızlı ve Kolay Makbuz Oluşturma</h3>
-                        <p>Tüm tahsilatlarınız için saniyeler içinde yasalara uygun resmi makbuzlar oluşturun.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-cloud"></i>
-                        <h3>Bulut Tabanlı Erişim</h3>
-                        <p>İnternet olan her yerden (PC, tablet, mobil) tüm verilerinize güvenle ulaşın.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-user-friends"></i>
-                        <h3>Kullanıcı Dostu Arayüz</h3>
-                        <p>Teknik bilgiye gerek duymadan, dakikalar içinde kullanmaya başlayın.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Güçlü Raporlama</h3>
-                        <p>Kasanızda ne var? Kimin ödemesi gecikti? Anlık raporlarla doğru kararlar verin.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section id="demo">
+    <h2>🚀 Demo Talep Formu</h2>
+    <div class="form-container">
+      <form id="demoForm">
+        <input type="text" id="name" placeholder="Adınız Soyadınız" required>
+        <input type="email" id="email" placeholder="E-posta adresiniz" required>
+        <input type="text" id="company" placeholder="İşletme Adı">
+        <select id="system" required>
+          <option value="">Sistemi Seçin</option>
+          <option>Aidat Takip Sistemi</option>
+          <option>Veteriner Yönetim Sistemi</option>
+          <option>Kuaför Yönetim Sistemi</option>
+          <option>Sanat Evi Kurs Yönetim Sistemi</option>
+        </select>
+        <textarea id="message" rows="4" placeholder="Not veya isteğiniz…"></textarea>
+        <button type="submit" class="submit">Gönder</button>
+      </form>
+      <p id="successMsg">✅ Demo talebiniz başarıyla gönderildi!</p>
+    </div>
+  </section>
 
-        <section class="how-to-start">
-            <div class="container">
-                <h2>3 Kolay Adımda Dijitalleşin</h2>
-                <div class="steps-grid">
-                    <div class="step-item">
-                        <span class="step-number">1</span>
-                        <h3>Demo Talep Edin</h3>
-                        <p>İhtiyaçlarınızı birlikte belirleyelim ve Tyosis'i size özel tanıtalım.</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">2</span>
-                        <h3>Hesabınızı Oluşturalım</h3>
-                        <p>Sizin için özelleştirilmiş Tyosis panelinizi dakikalar içinde aktif hale getirelim.</p>
-                    </div>
-                    <div class="step-item">
-                        <span class="step-number">3</span>
-                        <h3>Yönetmeye Başlayın</h3>
-                        <p>Verilerinizi girin ve işinizi kolaylaştırmanın keyfini hemen yaşamaya başlayın.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section id="contact">
+    <h2>İletişim</h2>
+    <div class="form-container">
+      <form class="contact">
+        <input type="text" placeholder="Adınız Soyadınız" required>
+        <input type="email" placeholder="E-posta adresiniz" required>
+        <textarea rows="4" placeholder="Mesajınız…"></textarea>
+        <button class="submit" type="submit">Gönder</button>
+      </form>
+    </div>
+  </section>
 
-        <section class="cta-closing">
-            <div class="container">
-                <h2>İşletmenizi Geleceğe Hazırlayın.</h2>
-                <p>Operasyonel yükü Tyosis'e bırakın, siz sadece işinizi büyütmeye odaklanın. 15 dakikalık ücretsiz demo ile Tyosis'in işinizi nasıl kolaylaştıracağını canlı olarak görün.</p>
-                <a href="#" class="btn btn-primary">Ücretsiz Demonuzu Şimdi Alın</a>
-            </div>
-        </section>
-    </main>
+  <footer>
+    © 2025 Tyosis Yazılım – Tüm Hakları Saklıdır | <span class="logo">Tyosis</span>
+  </footer>
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-col">
-                <a href="index.html">
-                    <img src="logo-beyaz.png" alt="Tyosis Logo Beyaz" style="height: 40px; margin-bottom: 15px;"> </a>
-                <p>Tyosis, küçük işletmelerin dijital dönüşüm yolculuğunda güvenilir ortağınız.</p>
-                <div class="social-links" style="margin-top: 20px;">
-                    <a href="https://instagram.com/tyosis" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-            </div>
-            <div class="footer-col">
-                <h4>Hızlı Menü</h4>
-                <ul>
-                    <li><a href="#solutions">Çözümlerimiz</a></li>
-                    <li><a href="#features">Özellikler</a></li>
-                    <li><a href="fiyatlandirma.html">Fiyatlandırma</a></li>
-                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>İletişim</h4>
-                <ul>
-                    <li><a href="mailto:info@tyosis.com"><i class="fas fa-envelope"></i> info@tyosis.com</a></li>
-                    <li><a href="tel:+90XXXxxxxxxx"><i class="fas fa-phone-alt"></i> +90 (XXX) XXX XX XX</a></li>
-                    <li><a href="iletisim.html"><i class="fas fa-map-marker-alt"></i> Adresimiz</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 TYOSİS. Tüm Hakları Saklıdır.</p>
-        </div>
-    </footer>
+  <a href="https://wa.me/905xxxxxxxxx" class="whatsapp-float" target="_blank" title="WhatsApp ile iletişime geç">
+    💬
+  </a>
 
-    <script>
-        // Mobil menü toggle fonksiyonu
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.nav-toggle');
-            const mainNav = document.querySelector('.main-nav');
-
-            navToggle.addEventListener('click', function() {
-                mainNav.classList.toggle('active');
-            });
-
-            // Menü açıldığında dışarıya tıklayınca kapanması için
-            document.addEventListener('click', function(event) {
-                if (!mainNav.contains(event.target) && !navToggle.contains(event.target) && mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                }
-            });
-        });
-    </script>
+  <!-- Firebase bağlantısı -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    const form = document.getElementById('demoForm');
+    const msg = document.getElementById('successMsg');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        company: form.company.value,
+        system: form.system.value,
+        message: form.message.value,
+        date: new Date().toISOString()
+      };
+      try {
+        await db.collection('demoRequests').add(data);
+        msg.style.display = 'block';
+        form.reset();
+        setTimeout(() => msg.style.display = 'none', 4000);
+      } catch (error) {
+        alert("Bir hata oluştu: " + error.message);
+      }
+    });
+  </script>
 
 </body>
 </html>
