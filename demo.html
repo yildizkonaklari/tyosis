@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Talep Et | TYOSİS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    .demo-section {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .demo-section h1 {
+      text-align: center;
+      color: #1E3A5F;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      width: 100%;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #6C2BBE;
+      box-shadow: 0 0 4px #c084fc;
+    }
+
+    button {
+      background-color: #6C2BBE;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #4F1C91;
+    }
+
+    .thank-you {
+      display: none;
+      text-align: center;
+      background: #E9D5FF;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      color: #1E3A5F;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><strong>TYOSİS</strong></a>
+    </div>
+    <div class="menu">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="products.html">Ürünler</a>
+      <a href="about.html">Hakkımızda</a>
+      <a href="demo.html">Demo</a>
+      <a href="contact.html">İletişim</a>
+    </div>
+  </nav>
+
+  <!-- Demo Talep Formu -->
+  <section class="demo-section">
+    <h1>Demo Talep Formu</h1>
+    <p style="text-align:center; margin-bottom:25px;">
+      Aşağıdaki formu doldurarak ürünlerimizin canlı demosunu talep edebilirsiniz.  
+      Ekibimiz en kısa sürede sizinle iletişime geçecektir.
+    </p>
+
+    <form id="demoForm">
+      <input type="text" id="name" placeholder="Ad Soyad" required>
+      <input type="text" id="company" placeholder="İşletme Adı (isteğe bağlı)">
+      <input type="email" id="email" placeholder="E-posta Adresi" required>
+      <input type="tel" id="phone" placeholder="Telefon Numarası" required>
+
+      <select id="system" required>
+        <option value="">Hangi sistemi incelemek istiyorsunuz?</option>
+        <option>Aidat Takip Sistemi</option>
+        <option>Veteriner Yönetim Sistemi</option>
+        <option>Kuaför / Berber Yönetim Sistemi</option>
+        <option>Sanat Evi Kurs Yönetim Sistemi</option>
+      </select>
+
+      <textarea id="message" rows="4" placeholder="Eklemek istediğiniz notlar..."></textarea>
+
+      <button type="submit">Demo Talep Et</button>
+    </form>
+
+    <div id="thankYou" class="thank-you">
+      🎉 Teşekkürler! Demo talebiniz başarıyla iletildi.  
+      En kısa sürede sizinle iletişime geçeceğiz.
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 TYOSİS – Tüm hakları saklıdır.</p>
+    <p>İletişim: <a href="mailto:info@tyosis.com" style="color:#C084FC;">info@tyosis.com</a></p>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/905xxxxxxxxx" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- JS: Form işlemi -->
+  <script>
+    const form = document.getElementById('demoForm');
+    const thankYou = document.getElementById('thankYou');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.reset();
+      thankYou.style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
