@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ürünler | TYOSİS</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      padding: 25px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .product-card h3 {
+      color: #1E3A5F;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .product-card button {
+      margin-top: 15px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-top: 60px;
+      color: #1E3A5F;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="index.html"><strong>TYOSİS</strong></a>
+    </div>
+    <div class="menu">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="products.html">Ürünler</a>
+      <a href="about.html">Hakkımızda</a>
+      <a href="demo.html">Demo</a>
+      <a href="contact.html">İletişim</a>
+    </div>
+  </nav>
+
+  <!-- Başlık -->
+  <h1 class="page-title">Ürünlerimiz</h1>
+
+  <!-- Ürün Kartları -->
+  <section class="products">
+
+    <div class="product-card">
+      <h3>Aidat Takip Sistemi</h3>
+      <p>Site yönetimleri için geliştirilmiş profesyonel sistemdir. Gelir-gider takibi, borç hatırlatma, PDF rapor, WhatsApp bildirimi gibi özellikler içerir.</p>
+      <a href="demo.html"><button>Demo Talep Et</button></a>
+    </div>
+
+    <div class="product-card">
+      <h3>Veteriner Yönetim Sistemi</h3>
+      <p>Hasta kayıtları, randevular, aşı takvimi ve finans yönetimini kolaylaştıran modern veteriner yazılımıdır. Bulut tabanlı, mobil uyumludur.</p>
+      <a href="demo.html"><button>Demo Talep Et</button></a>
+    </div>
+
+    <div class="product-card">
+      <h3>Kuaför / Berber Yönetim Sistemi</h3>
+      <p>Randevu planlama, müşteri kartları, kasa takibi ve SMS hatırlatma özellikleriyle kuaför ve berber işletmelerine özel olarak tasarlandı.</p>
+      <a href="demo.html"><button>Demo Talep Et</button></a>
+    </div>
+
+    <div class="product-card">
+      <h3>Sanat Evi Kurs Yönetim Sistemi</h3>
+      <p>Kurs kayıtları, eğitmen programları, ödemeler ve öğrenci devam durumu takibini kolayca yönetin. Müzik, resim, dans ve diğer sanat dallarına uygundur.</p>
+      <a href="demo.html"><button>Demo Talep Et</button></a>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 TYOSİS – Tüm hakları saklıdır.</p>
+    <p>İletişim: <a href="mailto:info@tyosis.com" style="color:#C084FC;">info@tyosis.com</a></p>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/905xxxxxxxxx" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
