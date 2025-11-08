@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İşinizi Dijitale Taşıyın | TYOSİS</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font Ailesi -->
@@ -23,11 +24,15 @@
                 extend: {
                     colors: {
                         primary: {
-                            DEFAULT: '#4f46e5', // indigo-600
-                            light: '#6366f1', // indigo-500
-                            dark: '#4338ca', // indigo-700
+                            DEFAULT: '#3730a3', // indigo-800 (Logodaki Koyu Mavi)
+                            light: '#4338ca', // indigo-700
+                            dark: '#312e81', // indigo-900
                         },
-                        secondary: '#10b981', // emerald-500
+                        secondary: {
+                            DEFAULT: '#a21caf', // fuchsia-700 (Logodaki Mor/Eflatun)
+                            light: '#c026d3', // fuchsia-600
+                            dark: '#86198f', // fuchsia-800
+                        },
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -44,7 +49,7 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo -->
             <a href="index.html" class="flex items-center space-x-2">
-                <img src="public/logo.png" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
+                <img src="logo(1).jpg" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
                 <span class="text-lg font-bold text-primary-dark hidden sm:inline">TYOSİS Takip Yönetim Sistemleri</span>
                 <span class="text-xl font-bold text-primary-dark sm:hidden">TYOSİS</span>
             </a>
@@ -176,7 +181,7 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                        Neden DijitalÇözüm?
+                        Neden TYOSİS?
                     </h2>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                         İşletmenizi dijital çağa taşıyacak, verimliliğinizi artıracak ve size zaman kazandıracak özellikler.
@@ -301,7 +306,7 @@
             <!-- Copyright -->
             <div class="border-t border-gray-700 mt-12 pt-8 text-center">
                 <p class="text-gray-500">
-                    &copy; 2025 DijitalÇözüm | Tüm Hakları Saklıdır.
+                    &copy; 2025 TYOSİS | Tüm Hakları Saklıdır.
                 </p>
             </div>
         </div>
