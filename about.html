@@ -1,123 +1,326 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hakkımızda | TYOSİS</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo.png">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | TYOSİS</title>
+    <link rel="icon" type="image/png" href="favicon.png">
 
-  <style>
-    .about-section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      color: #333;
-    }
+    <meta name="description" content="Dijital dönüşümde güvenilir çözüm ortağınız TYOSİS'in misyonunu ve değerlerini keşfedin. İşletmenizi teknoloji ile güçlendiriyoruz.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.tyosis.com/about.html">
 
-    .about-section h1 {
-      text-align: center;
-      color: #1E3A5F;
-      margin-bottom: 30px;
-    }
+    <meta property="og:title" content="Hakkımızda | TYOSİS">
+    <meta property="og:description" content="Dijital dönüşümde güvenilir çözüm ortağınız TYOSİS'in misyonunu ve değerlerini keşfedin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tyosis.com/about.html">
+    <meta property="og:image" content="https://www.tyosis.com.tr/logo.png">
+    <meta property="og:site_name" content="TYOSİS Takip Yönetim Sistemleri">
 
-    .about-section h2 {
-      color: #6C2BBE;
-      margin-top: 40px;
-    }
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hakkımızda | TYOSİS">
+    <meta name="twitter:description" content="Dijital dönüşümde güvenilir çözüm ortağınız TYOSİS'in misyonunu ve değerlerini keşfedin.">
+    <meta name="twitter:image" content="https://www.tyosis.com.tr/public/logo.png">
+    <meta name="twitter:site" content="@TYOSIS">
 
-    .about-section p {
-      font-size: 16px;
-      margin-top: 10px;
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ana Sayfa",
+        "item": "https://www.tyosis.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Hakkımızda",
+        "item": "https://www.tyosis.com/about.html"
+      }]
     }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TYOSİS Takip Yönetim Sistemleri",
+      "url": "https://www.tyosis.com.tr",
+      "logo": "public/logo.png"
+    }
+    </script>
 
-    .highlight {
-      color: #6C2BBE;
-      font-weight: bold;
-    }
-
-    .about-image {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .about-image img {
-      max-width: 280px;
-      border-radius: 10px;
-    }
-  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Inter font'u Tailwind'in varsayılan font ailesine ekleme */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+    <script>
+        // Basit Tailwind yapılandırması (isteğe bağlı)
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#3730a3', // indigo-800 (Logodaki Koyu Mavi)
+                            light: '#4338ca', // indigo-700
+                            dark: '#312e81', // indigo-900
+                        },
+                        secondary: {
+                            DEFAULT: '#a21caf', // fuchsia-700 (Logodaki Mor/Eflatun)
+                            light: '#c026d3', // fuchsia-600
+                            dark: '#86198f', // fuchsia-800
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
 </head>
+<body class="bg-gray-50 text-gray-800">
 
-<body>
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="/public/logo.png" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
+                <span class="text-lg font-bold text-primary-dark hidden sm:inline">TYOSİS Takip Yönetim Sistemleri</span>
+                <span class="text-xl font-bold text-primary-dark sm:hidden">TYOSİS</span>
+            </a>
+            
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">
-      <a href="index.html"><strong>TYOSİS</strong></a>
-    </div>
-    <div class="menu">
-      <a href="index.html">Ana Sayfa</a>
-      <a href="products.html">Ürünler</a>
-      <a href="about.html">Hakkımızda</a>
-      <a href="demo.html">Demo</a>
-      <a href="contact.html">İletişim</a>
-    </div>
-  </nav>
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Ana Sayfa</a>
+                <a href="products.html" class="text-gray-600 hover:text-primary transition duration-300">Ürünler</a>
+                <a href="about.html" class="text-primary font-semibold transition duration-300">Hakkımızda</a>
+                <a href="contact.html" class="text-gray-600 hover:text-primary transition duration-300">İletişim</a>
+                <a href="demo.html" class="bg-primary text-white px-5 py-2 rounded-lg font-medium hover:bg-primary-dark transition duration-300 shadow-sm">
+                    Demo Talep Et
+                </a>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-full left-0 w-full">
+            <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Ana Sayfa</a>
+            <a href="products.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Ürünler</a>
+            <a href="about.html" class="block px-6 py-3 text-primary font-semibold bg-gray-100">Hakkımızda</a>
+            <a href="contact.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">İletişim</a>
+            <a href="demo.html" class="block px-6 py-4 text-center bg-primary text-white font-medium hover:bg-primary-dark transition duration-300">
+                Demo Talep Et
+            </a>
+        </div>
+    </header>
 
-  <!-- Hakkımızda İçerik -->
-  <section class="about-section">
-    <h1>TYOSİS Hakkında</h1>
+    <main>
+        <section class="bg-gradient-to-r from-primary-dark to-primary-light text-white py-24 sm:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">
+                    Dijital Dönüşümde Güvenilir Çözüm Ortağınız
+                </h1>
+                <p class="text-lg text-indigo-100 max-w-3xl mx-auto">
+                    TYOSİS, işletmelerin tüm operasyonlarını dijital ortama taşıyarak zamandan tasarruf etmesini, verimliliğini artırmasını ve profesyonel görünmesini sağlar. Her sektörün ihtiyacına göre özelleştirilebilen yazılım çözümleri sunuyoruz.
+                </p>
+            </div>
+        </section>
 
-    <div class="about-image">
-      <img src="logo.png" alt="TYOSİS Logo">
-    </div>
+        <section id="mission" class="py-20 lg:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">Misyonumuz</h2>
+                        <p class="text-lg text-gray-600 mb-4">
+                            Küçük ve orta ölçekli işletmelerin dijital dönüşüm sürecinde yanlarında olmak, teknolojinin gücünü kullanarak işlerini daha verimli ve karlı hale getirmelerine yardımcı olmak.
+                        </p>
+                        <p class="text-gray-600 mb-8">
+                            Her sektörün kendine özgü ihtiyaçlarını anlayarak, kullanıcı dostu ve etkili çözümler geliştiriyoruz. Amacımız, teknolojinin karmaşıklığını ortadan kaldırarak işletmelerin asıl işlerine odaklanmalarını sağlamak.
+                        </p>
+                        <a href="demo.html" class="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition duration-300 shadow-sm">
+                            Çözümlerimizi Keşfedin
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <p>
-      <span class="highlight">TYOSİS (Takip Yönetim Sistemi)</span>, işletmelerin ve site yönetimlerinin dijital dönüşümünü kolaylaştırmak için kurulmuş bir yazılım markasıdır.
-      Amacımız, karmaşık takip süreçlerini sadeleştirip, kullanıcı dostu web tabanlı çözümlerle iş verimliliğini artırmaktır.
-    </p>
+        <section id="values" class="py-20 lg:py-28 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                        Değerlerimiz
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        İş yapış şeklimizi belirleyen temel değerlerimiz.
+                    </p>
+                </div>
 
-    <h2>Vizyonumuz</h2>
-    <p>
-      Küçük ve orta ölçekli işletmelerin dijital dünyada güçlü bir yer edinmesini sağlamak.
-      TYOSİS olarak; teknolojiyi herkes için erişilebilir hale getirerek, her işletmenin kendi verisini güvenle yönetebildiği bir ekosistem oluşturmayı hedefliyoruz.
-    </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-secondary text-white rounded-full mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17.382c.928.464 2.025.718 3.25.718 3.976 0 7.218-3.242 7.218-7.218S17.064 3.664 13 3.664s-7.218 3.242-7.218 7.218c0 1.225.254 2.322.718 3.25M9 13.5h6M13.5 9v6"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">İnovasyon</h3>
+                        <p class="text-gray-600 text-sm">Sürekli gelişen teknoloji ile işletmelere en güncel çözümleri sunuyoruz.</p>
+                    </div>
 
-    <h2>Misyonumuz</h2>
-    <p>
-      Kolay kullanılabilir, güvenli ve estetik yönetim sistemleri geliştirmek.
-      Müşteri deneyimini ön planda tutarak, her sektöre özel modüler çözümler sunmak.
-    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-secondary text-white rounded-full mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Güvenilirlik</h3>
+                        <p class="text-gray-600 text-sm">Verilerinizin güvenliği bizim için öncelik. 7/24 güvenli hizmet veriyoruz.</p>
+                    </div>
 
-    <h2>TYOSİS’in Hikayesi</h2>
-    <p>
-      TYOSİS’in temelleri, gerçek saha ihtiyaçlarından doğmuştur.  
-      Site yöneticilerinin, sanat evi sahiplerinin, veterinerlerin ve kuaförlerin günlük operasyonel zorluklarını çözmek için geliştirilmiştir.
-      Bugün TYOSİS, <span class="highlight">Aidat, Randevu, Müşteri ve Ödeme Takip</span> modülleriyle yüzlerce kullanıcıya dijital kolaylık sunuyor.
-    </p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-secondary text-white rounded-full mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-1.657-1.343-3-3-3h-2.143c-1.657 0-3 1.343-3 3v2m10 0H7M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-1.657 1.343-3 3-3h2.143c1.657 0 3 1.343 3 3v2M12 11c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Müşteri Odaklılık</h3>
+                        <p class="text-gray-600 text-sm">Her müşterimizin ihtiyacına özel çözümler geliştiriyoruz.</p>
+                    </div>
 
-    <h2>Değerlerimiz</h2>
-    <ul>
-      <li>💡 Şeffaflık ve güvenilirlik</li>
-      <li>⚙️ Sürekli gelişim ve yenilik</li>
-      <li>💬 Kullanıcı odaklı yaklaşım</li>
-      <li>🌍 Teknolojiyle sürdürülebilir dönüşüm</li>
-    </ul>
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center">
+                        <div class="flex items-center justify-center w-16 h-16 bg-secondary text-white rounded-full mx-auto mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Hızlı Çözüm</h3>
+                        <p class="text-gray-600 text-sm">Hızlı kurulum ve kolay kullanım ile işinizi hemen dijitalleştirin.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  </section>
+        <section id="cta" class="py-20 lg:py-28 bg-primary text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                    Bizimle Çalışmaya Hazır mısınız?
+                </h2>
+                <p class="text-lg text-indigo-100 max-w-2xl mx-auto mb-10">
+                    İşinizi dijitalleştirmek için ilk adımı atın. Ekibimiz size en uygun çözümü sunmaya hazır.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="demo.html" class="bg-white text-primary-dark px-8 py-3 rounded-lg font-bold text-lg hover:bg-gray-100 transition duration-300 shadow-lg transform hover:scale-105 w-full sm:w-auto">
+                        Demo Talep Et
+                    </a>
+                    <a href="contact.html" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-white hover:text-primary-dark transition duration-300 w-full sm:w-auto">
+                        İletişime Geç
+                    </a>
+                </div>
+            </div>
+        </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 TYOSİS – Tüm hakları saklıdır.</p>
-    <p>İletişim: <a href="mailto:info@tyosis.com" style="color:#C084FC;">info@tyosis.com</a></p>
-  </footer>
+    </main>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/905xxxxxxxxx" target="_blank" class="whatsapp-float">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <img src="public/logo.png" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
+                         <span class="text-lg font-bold text-white">TYOSİS Takip Yönetim Sistemleri</span>
+                    </a>
+                    <p class="text-gray-400">
+                        İşletmelerin dijital dönüşüm yolculuğunda güvenilir çözüm ortağınız.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Hızlı Linkler</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition duration-300">Ana Sayfa</a></li>
+                        <li><a href="products.html" class="hover:text-white transition duration-300">Ürünler</a></li>
+                        <li><a href="about.html" class="hover:text-white transition duration-300">Hakkımızda</a></li>
+                        <li><a href="demo.html" class="hover:text-white transition duration-300">Demo Talep Et</a></li>
+                         <li><a href="contact.html" class="hover:text-white transition duration-300">İletişim</a></li>
+                    </ul>
+                </div>
 
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">İletişim</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>+90 (555) 555 55 55</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span>info@tyosis.com</span>
+                        </li>
+                         <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>İstanbul, Türkiye</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Sosyal Medya</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/tyosis" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                        </a>
+                        <a href="https://www.twitter.com/tyosis" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/tyosis" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-8 12V9.25H8V15h3zm-3.75-5.75a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM16 15v-3.08c0-1.66-1.34-3-3-3s-3 1.34-3 3V15h-3V9.25H9.5V15h-3V5.75h3V7.5h.08C10.03 6.67 11.4 6 13 6c2.76 0 5 2.24 5 5v4h-2z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    &copy; 2025 TYOSİS | Tüm Hakları Saklıdır.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // ===== Sayfa Yüklendiğinde Çalışacak Tüm JS Kodları =====
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // ===== Mobil Menü Kodu =====
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if(menuButton && mobileMenu) {
+                // Mobil menü açma/kapatma
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Mobil menü linklerine tıklandığında menüyü kapat
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Sayfa içi link değilse kapatma, sayfa zaten değişecek
+                        if (!link.getAttribute('href').startsWith('#')) {
+                             mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            } else {
+                console.error("about.html: Mobil menü elementleri bulunamadı.")
+            }
+            
+            
+
+        });
+    </script>
+    
 </body>
 </html>
