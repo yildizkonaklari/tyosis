@@ -509,29 +509,32 @@
         }
 
 
-        // ===== Mevcut Sayfa JS'i (Mobil Menü vb.) =====
+        // ===== Sayfa Yüklendiğinde Çalışacak Tüm JS Kodları =====
         document.addEventListener('DOMContentLoaded', () => {
+            
+            // ===== Mobil Menü Kodu =====
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Mobil menü açma/kapatma
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Mobil menü linklerine tıklandığında menüyü kapat
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    // Sayfa içi link değilse kapatma, sayfa zaten değişecek
-                    if (!link.getAttribute('href').startsWith('#')) {
-                         mobileMenu.classList.add('hidden');
-                    }
+            if(menuButton && mobileMenu) {
+                // Mobil menü açma/kapatma
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
                 });
-            });
+
+                // Mobil menü linklerine tıklandığında menüyü kapat
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Sayfa içi link değilse kapatma, sayfa zaten değişecek
+                        if (!link.getAttribute('href').startsWith('#')) {
+                             mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            }
             
-            // Sayfa içi linklere yumuşak kaydırma (Smooth Scroll)
-            // Sadece index.html'de ihtiyaç var, ancak diğer sayfalarda zararı olmaz.
+            // ===== Sayfa İçi Yumuşak Kaydırma Kodu =====
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     // Sadece sayfa içi linkler için
@@ -550,18 +553,14 @@
                                     top: offsetPosition,
                                     behavior: "smooth"
                                 });
-
-                                // URL'ye hash'i ekle (isteğe bağlı)
-                                // history.pushState(null, null, hash);
                             }
                         }
                     }
                 });
             });
-        });
 
-        // ===== YENİ CHAT BOTU JS =====
-        document.addEventListener('DOMContentLoaded', () => {
+            
+            // ===== CHAT BOTU JS Kodu =====
             const chatIcon = document.getElementById('chat-icon');
             const chatWidget = document.getElementById('chat-widget');
             const chatClose = document.getElementById('chat-close');
@@ -569,6 +568,12 @@
             const chatInputArea = document.getElementById('chat-input-area');
             const chatInput = document.getElementById('chat-input');
             const chatSend = document.getElementById('chat-send');
+
+            // Elementler bulunamazsa hata günlüğe yaz ve dur
+            if (!chatIcon || !chatWidget || !chatClose || !chatMessages || !chatInputArea || !chatInput || !chatSend) {
+                console.error("Chat botu elementlerinden biri veya birkaçı DOM'da bulunamadı.");
+                return;
+            }
 
             let chatState = 'START'; // START, SECTOR, NAME, PHONE, THANKS
             let chatData = {};
@@ -733,7 +738,8 @@
             function hideInput() {
                 chatInputArea.classList.add('hidden');
             }
-        });
+
+        }); // Tek DOMContentLoaded burada biter
 
     </script>
 
