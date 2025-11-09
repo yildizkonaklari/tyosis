@@ -659,6 +659,225 @@
                         showInput();
                     }, 500);
                 } else if (chatState === 'NAME') {
+<script type="module">
+        // Firebase ve Firestore modüllerini import et
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // YENİ: Firebase yapılandırmanız doğrudan buraya eklendi
+        const firebaseConfig = {
+          apiKey: "AIzaSyAW5TcVrmGHrUvMtiWHyvSMobNg8AKLitE",
+          authDomain: "tyosispanel.firebaseapp.com",
+          projectId: "tyosispanel",
+          storageBucket: "tyosispanel.firebasestorage.app",
+          messagingSenderId: "1082615656645",
+          appId: "1:1082615656645:web:a7659598f5582d4de240ac"
+        };
+
+        // Firebase'i başlat
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        
+        // Firebase loglarını konsolda görmek için
+        setLogLevel('Debug');
+
+        let userId = null;
+        let dbRef = null;
+
+        // Firebase oturumunu yönet
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                // Kullanıcı zaten oturum açmış (anonim olarak)
+                userId = user.uid;
+            } else {
+                // Kullanıcı oturum açmamış, anonim giriş yap
+                try {
+                    await signInAnonymously(auth);
+                    userId = auth.currentUser.uid;
+                } catch (error) {
+                    console.error("Firebase Auth hatası:", error);
+                    userId = 'anonim-' + Math.random().toString(36).substring(2, 9);
+                }
+            }
+            console.log("Kullanıcı ID:", userId);
+            
+            // YENİ: Veritabanı referansını projenizdeki 'demo_talepleri' koleksiyonuna ayarla
+            dbRef = collection(db, 'demo_talepleri');
+        });
+
+        // Veritabanına talep kaydetme fonksiyonu
+        async function saveRequest(data) {
+            if (!dbRef) {
+                console.error("Veritabanı referansı hazır değil. Lütfen bir saniye bekleyip tekrar deneyin.");
+                return;
+            }
+            try {
+                // YENİ: addDoc 'demo_talepleri' koleksiyonuna yazacak
+                await addDoc(dbRef, {
+                    ...data,
+                    createdAt: serverTimestamp(),
+                    userId: userId, // Hangi anonim kullanıcının talep gönderdiğini bilmek için
+                    source: 'Website Chat' // Verinin nereden geldiğini belirtmek için
+                });
+                console.log("Demo talebi başarıyla kaydedildi:", data);
+            } catch (error) {
+                console.error("Veritabanına yazma hatası: ", error);
+            }
+        }
+
+
+        // ===== Sayfa Yüklendiğinde Çalışacak Tüm JS Kodları =====
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // ===== Mobil Menü Kodu =====
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if(menuButton && mobileMenu) {
+                // Mobil menü açma/kapatma
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Mobil menü linklerine tıklandığında menüyü kapat
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Sayfa içi link değilse kapatma, sayfa zaten değişecek
+                        if (!link.getAttribute('href').startsWith('#')) {
+                             mobileMenu.classList.add('hidden');
+                        }
+                    });
+                });
+            }
+            
+            // ===== Sayfa İçi Yumuşak Kaydırma Kodu =====
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Sadece sayfa içi linkler için
+                    if(this.hash !== "") {
+                        // Sadece index.html'de bu davranışı sergile
+                        if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+                            e.preventDefault();
+                            const hash = this.hash;
+                            const targetElement = document.querySelector(hash);
+                            if(targetElement) {
+                                const headerOffset = document.querySelector('header').offsetHeight;
+                                const elementPosition = targetElement.offsetTop;
+                                const offsetPosition = elementPosition - headerOffset;
+
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: "smooth"
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+
+            
+            // ===== CHAT BOTU JS Kodu =====
+            const chatIcon = document.getElementById('chat-icon');
+            const chatWidget = document.getElementById('chat-widget');
+            const chatClose = document.getElementById('chat-close');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatInputArea = document.getElementById('chat-input-area');
+            const chatInput = document.getElementById('chat-input');
+            const chatSend = document.getElementById('chat-send');
+
+            // Elementler bulunamazsa hata günlüğe yaz ve dur
+            if (!chatIcon || !chatWidget || !chatClose || !chatMessages || !chatInputArea || !chatInput || !chatSend) {
+                console.error("Chat botu elementlerinden biri veya birkaçı DOM'da bulunamadı.");
+                return;
+            }
+
+            let chatState = 'START'; // START, SECTOR, NAME, PHONE, THANKS
+            let chatData = {};
+
+            // Chat botunu aç
+            chatIcon.addEventListener('click', () => {
+                chatWidget.classList.remove('hidden', 'opacity-0');
+                chatIcon.classList.add('hidden', 'opacity-0');
+                if (chatState === 'START') {
+                    startChat();
+                }
+            });
+
+            // Chat botunu kapat
+            chatClose.addEventListener('click', () => {
+                closeChat();
+            });
+
+            function closeChat() {
+                chatWidget.classList.add('hidden', 'opacity-0');
+                chatIcon.classList.remove('hidden', 'opacity-0');
+            }
+
+            // Chat botunu başlat
+            function startChat() {
+                chatState = 'START';
+                chatData = {};
+                chatMessages.innerHTML = '';
+                addBotMessage("Merhabalar, demo talebinizi oluşturmak ister misiniz?");
+                showOptions(['Evet', 'Hayır']);
+            }
+
+            // Seçenek butonlarına tıklandığında
+            chatMessages.addEventListener('click', function(e) {
+                if (e.target && e.target.classList.contains('chat-option')) {
+                    const value = e.target.dataset.value;
+                    handleChatResponse(value);
+                }
+            });
+
+            // Gönder butonuna tıklandığında
+            chatSend.addEventListener('click', () => {
+                const value = chatInput.value.trim();
+                if (value) {
+                    handleChatResponse(value);
+                }
+            });
+
+            // Enter tuşuna basıldığında
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    const value = chatInput.value.trim();
+                    if (value) {
+                        handleChatResponse(value);
+                    }
+                }
+            });
+
+            // Chat akışını yönet
+            function handleChatResponse(response) {
+                addUserMessage(response);
+                hideOptions();
+                
+                if (chatState === 'START') {
+                    if (response === 'Evet') {
+                        chatState = 'SECTOR';
+                        setTimeout(() => {
+                            addBotMessage("Harika! Hangi sektörde hizmet veriyorsunuz?");
+                            showInput();
+                        }, 500);
+                    } else { // Hayır
+                        chatState = 'END';
+                        setTimeout(() => {
+                            addBotMessage("Anlıyorum. Fikrinizi değiştirirseniz buradayız!");
+                            setTimeout(closeChat, 2000);
+                        }, 500);
+                    }
+                } else if (chatState === 'SECTOR') {
+                    chatData.sector = response;
+                    chatState = 'NAME';
+                    setTimeout(() => {
+                        addBotMessage("Adınız Soyadınız nedir?");
+                        showInput();
+                    }, 500);
+                } else if (chatState === 'NAME') {
                     chatData.name = response;
                     chatState = 'PHONE';
                     setTimeout(() => {
@@ -672,7 +891,7 @@
                     setTimeout(async () => {
                         addBotMessage("Tyosis'i tercih ettiğiniz için teşekkürler. Tyosis Ekibi en kısa zamanda sizlere ulaşarak bilgi verecektir. Görüşmek üzere");
                         
-                        // Veriyi Firebase'e kaydet
+                        // YENİ: Veri Firebase'e bu noktada kaydedilecek
                         await saveRequest({
                             type: 'chat',
                             name: chatData.name,
@@ -742,7 +961,6 @@
         }); // Tek DOMContentLoaded burada biter
 
     </script>
-
     <!-- ===== YENİ Chat Botu HTML (BURADAN SİLİNDİ) ===== -->
     
 </body>
