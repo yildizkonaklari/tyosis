@@ -6,27 +6,23 @@
     <title>Ürünler & Hizmetler | TYOSİS</title>
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- ===== SEO & Sosyal Medya Meta Etiketleri ===== -->
     <meta name="description" content="TYOSİS, Site Yönetimi, Eğitim Kurumları, Kuaför, Sağlık ve Danışmanlık gibi bir çok sektöre özel takip ve yönetim yazılımları sunar.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.tyosis.com/products.html">
 
-    <!-- Open Graph (Facebook, LinkedIn vb.) -->
     <meta property="og:title" content="Ürünler & Hizmetler | TYOSİS">
     <meta property="og:description" content="Farklı sektörlerin ihtiyaçlarına özel olarak tasarlanmış esnek yazılım çözümlerimizi inceleyin.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.tyosis.com/products.html">
-    <meta property="og:image" content="https://www.tyosis.com/logo(1).jpg">
+    <meta property="og:image" content="https://www.tyosis.com.tr/logo.png">
     <meta property="og:site_name" content="TYOSİS Takip Yönetim Sistemleri">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Ürünler & Hizmetler | TYOSİS">
     <meta name="twitter:description" content="Farklı sektörlerin ihtiyaçlarına özel olarak tasarlanmış esnek yazılım çözümlerimizi inceleyin.">
-    <meta name="twitter:image" content="https://www.tyosis.com/logo(1).jpg">
+    <meta name="twitter:image" content="https://www.tyosis.com.tr/logo.png">
     <meta name="twitter:site" content="@TYOSIS">
 
-    <!-- Schema.org (JSON-LD) Yapılandırılmış Veri -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -49,14 +45,12 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "TYOSİS Takip Yönetim Sistemleri",
-      "url": "https://www.tyosis.com",
-      "logo": "https://www.tyosis.com/logo(1).jpg"
+      "url": "https://www.tyosis.com.tr",
+      "logo": "public/logo.png"
     }
     </script>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font Ailesi -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -93,24 +87,20 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- ===== Header / Navigasyon ===== -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="index.html" class="flex items-center space-x-2">
-                <img src="logo(1).jpg" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
+                <img src="public/logo.png" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
                 <span class="text-lg font-bold text-primary-dark hidden sm:inline">TYOSİS Takip Yönetim Sistemleri</span>
                 <span class="text-xl font-bold text-primary-dark sm:hidden">TYOSİS</span>
             </a>
             
-            <!-- Mobil Menu Butonu (Hamburger) -->
             <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
 
-            <!-- Masaüstü Menü -->
             <div class="hidden lg:flex items-center space-x-6">
                 <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Ana Sayfa</a>
                 <a href="products.html" class="text-primary font-semibold transition duration-300">Ürünler</a>
@@ -122,7 +112,6 @@
             </div>
         </nav>
         
-        <!-- Mobil Menü (Gizli) -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-full left-0 w-full">
             <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Ana Sayfa</a>
             <a href="products.html" class="block px-6 py-3 text-primary font-semibold bg-gray-100">Ürünler</a>
@@ -135,7 +124,6 @@
     </header>
 
     <main>
-        <!-- ===== Hizmet Sektörleri Bölümü ===== -->
         <section id="services" class="py-20 lg:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -147,12 +135,9 @@
                     </p>
                 </div>
                 
-                <!-- Sektör Kartları -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Kart 1: Site Yönetimi -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
-                            <!-- Basit İkon -->
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                         </div>
                         <h3 class="text-2xl font-semibold text-gray-900 mb-3">Site Yönetimi</h3>
@@ -162,7 +147,6 @@
                         </a>
                     </div>
                     
-                    <!-- Kart 2: Eğitim Kurumları -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
@@ -174,7 +158,6 @@
                         </a>
                     </div>
 
-                    <!-- Kart 3: Kuaför & Berber -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M12 12C10.8954 12 10 11.1046 10 10C10 8.89543 10.8954 8 12 8C13.1046 8 14 8.89543 14 10C14 11.1046 13.1046 12 12 12zM12 12v6M8 16h8"></path></svg>
@@ -186,7 +169,6 @@
                         </a>
                     </div>
 
-                    <!-- Kart 4: Sağlık Hizmetleri -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -198,7 +180,6 @@
                         </a>
                     </div>
 
-                    <!-- Kart 5: Psikoloji & Danışmanlık -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
@@ -210,7 +191,6 @@
                         </a>
                     </div>
                     
-                    <!-- Kart 6: Anaokulu & Kreş -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
@@ -222,8 +202,7 @@
                         </a>
                     </div>
 
-                     <!-- Kart 7: E-Ticaret -->
-                    <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         </div>
@@ -234,7 +213,6 @@
                         </a>
                     </div>
 
-                    <!-- Kart 8: Restoran & Kafe -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0c-.454-.303-.977-.454-1.5-.454V4.5A2.5 2.5 0 015.5 2h13A2.5 2.5 0 0121 4.5v11.046zM6 10h.01M10 10h.01M14 10h.01M18 10h.01"></path></svg>
@@ -246,7 +224,6 @@
                         </a>
                     </div>
 
-                    <!-- Kart 9: Spor Salonu -->
                     <div class="bg-gray-50 rounded-xl shadow-lg p-8 text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                         <div class="flex items-center justify-center w-16 h-16 bg-primary-light text-white rounded-full mx-auto mb-6">
                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.636 18.364a9 9 0 010-12.728m12.728 0a9 9 0 010 12.728m-12.728 0L3 21m18-2.636l-2.636-2.636m-3.536-3.536a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"></path></svg>
@@ -259,8 +236,64 @@
                     </div>
                 </div>
             </div>
+        </section> </main>
 
-            <!-- Copyright -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="index.html" class="flex items-center space-x-2 mb-4">
+                        <img src="logo(1).jpg" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
+                        <span class="text-xl font-bold text-white">TYOSİS</span>
+                    </a>
+                    <p class="text-gray-400">İşletmelerin dijital dönüşümünde güvenilir çözüm ortağınız.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Hızlı Linkler</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition duration-300">Ana Sayfa</a></li>
+                        <li><a href="products.html" class="hover:text-white transition duration-300">Ürünler</a></li>
+                        <li><a href="about.html" class="hover:text-white transition duration-300">Hakkımızda</a></li>
+                        <li><a href="demo.html" class="hover:text-white transition duration-300">Demo Talep Et</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition duration-300">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">İletişim</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.76a11.03 11.03 0 006.074 6.074l.76-1.517a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C6.925 18 2 13.075 2 7V3z"></path></svg>
+                            <span>+90 (555) 123 45 67</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 11.884l7.997-6M2 18h16V6l-8 5-8-5v12z"></path></svg>
+                            <span>info@tyosis.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                            <span>İstanbul, Türkiye</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Bizi Takip Edin</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/tyosis" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.5 0-1 .5-1 1v2h3l-.5 3h-2.5v6.8A10 10 0 0022 12z"></path></svg>
+                        </a>
+                        <a href="https://twitter.com/tyosis" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.94.07 4.28 4.28 0 004 2.98 8.52 8.52 0 01-5.33 1.84c-.35 0-.69-.02-1.03-.06A12.02 12.02 0 008.29 20c7.55 0 11.67-6.25 11.67-11.67 0-.18 0-.35-.01-.53.8-.58 1.48-1.3 2.02-2.13z"></path></svg>
+                        </a>
+                        <a href="https://linkedin.com/company/tyosis" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.5 18H5.5V9h3v9zM7 7.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM18.5 18h-3v-4.5c0-1.2-.4-2-1.5-2-.8 0-1.3.5-1.5 1v5.5H9.5V9h3v1.5c.5-.8 1.5-1.5 3-1.5 2.2 0 4 1.8 4 5.5V18z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="border-t border-gray-700 mt-12 pt-8 text-center">
                 <p class="text-gray-500">
                     &copy; 2025 TYOSİS | Tüm Hakları Saklıdır.
@@ -270,343 +303,36 @@
     </footer>
 
 
-    <!-- ===== JavaScript ===== -->
-    <!-- Firebase SDK'ları -->
-    <script type="module">
-        // Firebase ve Firestore modüllerini import et
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-        // Firebase'i başlat
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-        
-        // Firebase loglarını konsolda görmek için
-        setLogLevel('Debug');
-
-        let userId = null;
-        let dbRef = null;
-
-        // Firebase oturumunu yönet
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                // Kullanıcı zaten oturum açmış
-                userId = user.uid;
-            } else {
-                // Kullanıcı oturum açmamış, token ile dene veya anonim giriş yap
-                try {
-                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                        await signInWithCustomToken(auth, __initial_auth_token);
-                        userId = auth.currentUser.uid;
-                    } else {
-                        await signInAnonymously(auth);
-                        userId = auth.currentUser.uid;
-                    }
-                } catch (error) {
-                    console.error("Firebase Auth hatası:", error);
-                    userId = 'anonim-' + Math.random().toString(36).substring(2, 9);
-                }
-            }
-            console.log("Kullanıcı ID:", userId);
-            // Veritabanı referansını ayarla (tüm talepler 'public' altına gidecek)
-            dbRef = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
-        });
-
-        // Veritabanına talep kaydetme fonksiyonu
-        async function saveRequest(data) {
-            if (!dbRef) {
-                console.error("Veritabanı referansı hazır değil.");
-                return;
-            }
-            try {
-                await addDoc(dbRef, {
-                    ...data,
-                    createdAt: serverTimestamp(),
-                    userId: userId
-                });
-                console.log("Talep başarıyla kaydedildi:", data.type);
-            } catch (error) {
-                console.error("Veritabanına yazma hatası: ", error);
-            }
-        }
-
-
-        // ===== Mevcut Sayfa JS'i (Mobil Menü vb.) =====
+    <script>
+        // ===== Sayfa Yüklendiğinde Çalışacak Tüm JS Kodları =====
         document.addEventListener('DOMContentLoaded', () => {
+            
+            // ===== Mobil Menü Kodu =====
             const menuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Mobil menü açma/kapatma
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            // Mobil menü linklerine tıklandığında menüyü kapat
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    // Sayfa içi link değilse kapatma, sayfa zaten değişecek
-                    if (!link.getAttribute('href').startsWith('#')) {
-                         mobileMenu.classList.add('hidden');
-                    }
+            if(menuButton && mobileMenu) {
+                // Mobil menü açma/kapatma
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
                 });
-            });
-        });
 
-        // ===== YENİ CHAT BOTU JS =====
-        document.addEventListener('DOMContentLoaded', () => {
-            const chatIcon = document.getElementById('chat-icon');
-            const chatWidget = document.getElementById('chat-widget');
-            const chatClose = document.getElementById('chat-close');
-            const chatMessages = document.getElementById('chat-messages');
-            const chatInputArea = document.getElementById('chat-input-area');
-            const chatInput = document.getElementById('chat-input');
-            const chatSend = document.getElementById('chat-send');
-
-            let chatState = 'START'; // START, SECTOR, NAME, PHONE, THANKS
-            let chatData = {};
-
-            // Chat botunu aç
-            chatIcon.addEventListener('click', () => {
-                chatWidget.classList.remove('hidden', 'opacity-0');
-                chatIcon.classList.add('hidden', 'opacity-0');
-                if (chatState === 'START') {
-                    startChat();
-                }
-            });
-
-            // Chat botunu kapat
-            chatClose.addEventListener('click', () => {
-                closeChat();
-            });
-
-            function closeChat() {
-                chatWidget.classList.add('hidden', 'opacity-0');
-                chatIcon.classList.remove('hidden', 'opacity-0');
-            }
-
-            // Chat botunu başlat
-            function startChat() {
-                chatState = 'START';
-                chatData = {};
-                chatMessages.innerHTML = '';
-                addBotMessage("Merhabalar, demo talebinizi oluşturmak ister misiniz?");
-                showOptions(['Evet', 'Hayır']);
-            }
-
-            // Seçenek butonlarına tıklandığında
-            chatMessages.addEventListener('click', function(e) {
-                if (e.target && e.target.classList.contains('chat-option')) {
-                    const value = e.target.dataset.value;
-                    handleChatResponse(value);
-                }
-            });
-
-            // Gönder butonuna tıklandığında
-            chatSend.addEventListener('click', () => {
-                const value = chatInput.value.trim();
-                if (value) {
-                    handleChatResponse(value);
-                }
-            });
-
-            // Enter tuşuna basıldığında
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    const value = chatInput.value.trim();
-                    if (value) {
-                        handleChatResponse(value);
-                    }
-                }
-            });
-
-            // Chat akışını yönet
-            function handleChatResponse(response) {
-                addUserMessage(response);
-                hideOptions();
-                
-                if (chatState === 'START') {
-                    if (response === 'Evet') {
-                        chatState = 'SECTOR';
-                        setTimeout(() => {
-                            addBotMessage("Harika! Hangi sektörde hizmet veriyorsunuz?");
-                            showInput();
-                        }, 500);
-                    } else { // Hayır
-                        chatState = 'END';
-                        setTimeout(() => {
-                            addBotMessage("Anlıyorum. Fikrinizi değiştirirseniz buradayız!");
-                            setTimeout(closeChat, 2000);
-                        }, 500);
-                    }
-                } else if (chatState === 'SECTOR') {
-                    chatData.sector = response;
-                    chatState = 'NAME';
-                    setTimeout(() => {
-                        addBotMessage("Adınız Soyadınız nedir?");
-                        showInput();
-                    }, 500);
-                } else if (chatState === 'NAME') {
-                    chatData.name = response;
-                    chatState = 'PHONE';
-                    setTimeout(() => {
-                        addBotMessage("Son olarak telefon numaranızı alabilir miyim?");
-                        showInput();
-                    }, 500);
-                } else if (chatState === 'PHONE') {
-                    chatData.phone = response;
-                    chatState = 'THANKS';
-                    hideInput();
-                    setTimeout(async () => {
-                        addBotMessage("Tyosis'i tercih ettiğiniz için teşekkürler. Tyosis Ekibi en kısa zamanda sizlere ulaşarak bilgi verecektir. Görüşmek üzere");
-                        
-                        // Veriyi Firebase'e kaydet
-                        await saveRequest({
-                            type: 'chat',
-                            name: chatData.name,
-                            phone: chatData.phone,
-                            sector: chatData.sector
-                        });
-
-                        setTimeout(() => {
-                            closeChat();
-                            // Chat'i bir sonraki açılış için sıfırla
-                            setTimeout(startChat, 1000); // Kapatırken sıfırla
-                        }, 5000); // 5 saniye bekle ve kapat
-                    }, 500);
-                }
-            }
-
-            // Yardımcı fonksiyonlar
-            function addBotMessage(message) {
-                chatMessages.innerHTML += `
-                    <div class="mb-3">
-                        <div class="inline-block bg-gray-200 text-gray-800 p-3 rounded-lg rounded-bl-none">
-                            ${message}
-                        </div>
-                    </div>
-                `;
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function addUserMessage(message) {
-                chatMessages.innerHTML += `
-                    <div class="mb-3 text-right">
-                        <div class="inline-block bg-primary text-white p-3 rounded-lg rounded-br-none">
-                            ${message}
-                        </div>
-                    </div>
-                `;
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function showOptions(options) {
-                let optionsHtml = '<div class="flex gap-2 mb-3" id="chat-options">';
-                options.forEach(option => {
-                    optionsHtml += `<button class="chat-option flex-1 bg-white border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors" data-value="${option}">${option}</button>`;
+                // Mobil menü linklerine tıklandığında menüyü kapat
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        // Sayfa içi link değilse kapatma, sayfa zaten değişecek
+                        if (!link.getAttribute('href').startsWith('#')) {
+                             mobileMenu.classList.add('hidden');
+                        }
+                    });
                 });
-                optionsHtml += '</div>';
-                chatMessages.innerHTML += optionsHtml;
-                hideInput();
+            } else {
+                console.error("products.html: Mobil menü elementleri bulunamadı.");
             }
-
-            function hideOptions() {
-                const optionsEl = document.getElementById('chat-options');
-                if (optionsEl) {
-                    optionsEl.remove();
-                }
-            }
-
-            function showInput() {
-                chatInputArea.classList.remove('hidden');
-                chatInput.value = '';
-                chatInput.focus();
-            }
-
-            function hideInput() {
-                chatInputArea.classList.add('hidden');
-            }
-        });
+            
+        }); // Tek DOMContentLoaded burada biter
     </script>
     
-    <!-- ===== YENİ Chat Botu HTML ===== -->
-    <style>
-        /* Chat ikonu ve widget stilleri */
-        #chat-icon {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            background-color: #25D366; /* WhatsApp yeşili */
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            z-index: 998;
-        }
-        #chat-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-        }
-        #chat-widget {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 360px;
-            max-width: calc(100% - 4rem);
-            height: 500px;
-            max-height: calc(100% - 4rem);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            background-color: white;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-    </style>
-
-    <!-- Chat İkonu -->
-    <div id="chat-icon">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.62 3.38a1.5 1.5 0 00-2.12 0l-1.92 1.92A9.95 9.95 0 0012 4C6.48 4 2 8.48 2 14c0 2.76 1.12 5.26 2.93 7.07l-1.7 1.7a1.5 1.5 0 002.12 2.12l1.7-1.7A9.95 9.95 0 0012 24c5.52 0 10-4.48 10-10 0-2.76-1.12-5.26-2.93-7.07l1.7-1.7a1.5 1.5 0 000-2.12zM12 22c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M16.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM7.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM12 16.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 11.5 12 11.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
-    </div>
-
-    <!-- Chat Widget -->
-    <div id="chat-widget" class="hidden opacity-0">
-        <!-- Header -->
-        <div class="bg-primary text-white p-4 flex justify-between items-center">
-            <div>
-                <h3 class="font-bold text-lg">TYOSİS Destek</h3>
-                <p class="text-sm text-indigo-200">Hemen yanıtlıyoruz</p>
-            </div>
-            <button id="chat-close" class="text-white hover:text-indigo-200">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-            </button>
-        </div>
-        <!-- Mesajlar -->
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-100">
-            <!-- Mesajlar buraya eklenecek -->
-        </div>
-        <!-- Input Alanı -->
-        <div id="chat-input-area" class="p-4 bg-white border-t border-gray-200 hidden">
-            <div class="flex gap-2">
-                <input type="text" id="chat-input" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Mesajınızı yazın...">
-                <button id="chat-send" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
 </body>
 </html>
