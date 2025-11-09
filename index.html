@@ -296,6 +296,81 @@
         </section>
     </main>
 
+    <!-- ===== YENİ Chat Botu HTML (JS'den ÖNCEYE TAŞINDI) ===== -->
+    <style>
+        /* Chat ikonu ve widget stilleri */
+        #chat-icon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background-color: #25D366; /* WhatsApp yeşili */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            z-index: 998;
+        }
+        #chat-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        #chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 360px;
+            max-width: calc(100% - 4rem);
+            height: 500px;
+            max-height: calc(100% - 4rem);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            background-color: white;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <!-- Chat İkonu -->
+    <div id="chat-icon">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.62 3.38a1.5 1.5 0 00-2.12 0l-1.92 1.92A9.95 9.95 0 0012 4C6.48 4 2 8.48 2 14c0 2.76 1.12 5.26 2.93 7.07l-1.7 1.7a1.5 1.5 0 002.12 2.12l1.7-1.7A9.95 9.95 0 0012 24c5.52 0 10-4.48 10-10 0-2.76-1.12-5.26-2.93-7.07l1.7-1.7a1.5 1.5 0 000-2.12zM12 22c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M16.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM7.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM12 16.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 11.5 12 11.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="hidden opacity-0">
+        <!-- Header -->
+        <div class="bg-primary text-white p-4 flex justify-between items-center">
+            <div>
+                <h3 class="font-bold text-lg">TYOSİS Destek</h3>
+                <p class="text-sm text-indigo-200">Hemen yanıtlıyoruz</p>
+            </div>
+            <button id="chat-close" class="text-white hover:text-indigo-200">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+            </button>
+        </div>
+        <!-- Mesajlar -->
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-100">
+            <!-- Mesajlar buraya eklenecek -->
+        </div>
+        <!-- Input Alanı -->
+        <div id="chat-input-area" class="p-4 bg-white border-t border-gray-200 hidden">
+            <div class="flex gap-2">
+                <input type="text" id="chat-input" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Mesajınızı yazın...">
+                <button id="chat-send" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- ===== Footer Bölümü ===== -->
     <footer id="contact" class="bg-gray-900 text-gray-300 py-16">
         <div class="container mx-auto px-6">
@@ -662,80 +737,7 @@
 
     </script>
 
-    <!-- ===== YENİ Chat Botu HTML ===== -->
-    <style>
-        /* Chat ikonu ve widget stilleri */
-        #chat-icon {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            background-color: #25D366; /* WhatsApp yeşili */
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            z-index: 998;
-        }
-        #chat-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-        }
-        #chat-widget {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 360px;
-            max-width: calc(100% - 4rem);
-            height: 500px;
-            max-height: calc(100% - 4rem);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            background-color: white;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-    </style>
-
-    <!-- Chat İkonu -->
-    <div id="chat-icon">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.62 3.38a1.5 1.5 0 00-2.12 0l-1.92 1.92A9.95 9.95 0 0012 4C6.48 4 2 8.48 2 14c0 2.76 1.12 5.26 2.93 7.07l-1.7 1.7a1.5 1.5 0 002.12 2.12l1.7-1.7A9.95 9.95 0 0012 24c5.52 0 10-4.48 10-10 0-2.76-1.12-5.26-2.93-7.07l1.7-1.7a1.5 1.5 0 000-2.12zM12 22c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M16.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM7.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM12 16.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 11.5 12 11.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
-    </div>
-
-    <!-- Chat Widget -->
-    <div id="chat-widget" class="hidden opacity-0">
-        <!-- Header -->
-        <div class="bg-primary text-white p-4 flex justify-between items-center">
-            <div>
-                <h3 class="font-bold text-lg">TYOSİS Destek</h3>
-                <p class="text-sm text-indigo-200">Hemen yanıtlıyoruz</p>
-            </div>
-            <button id="chat-close" class="text-white hover:text-indigo-200">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-            </button>
-        </div>
-        <!-- Mesajlar -->
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-100">
-            <!-- Mesajlar buraya eklenecek -->
-        </div>
-        <!-- Input Alanı -->
-        <div id="chat-input-area" class="p-4 bg-white border-t border-gray-200 hidden">
-            <div class="flex gap-2">
-                <input type="text" id="chat-input" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Mesajınızı yazın...">
-                <button id="chat-send" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
+    <!-- ===== YENİ Chat Botu HTML (BURADAN SİLİNDİ) ===== -->
+    
 </body>
 </html>
