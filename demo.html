@@ -6,12 +6,10 @@
     <title>Demo Talep Et | TYOSİS</title>
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- ===== SEO & Sosyal Medya Meta Etiketleri ===== -->
     <meta name="description" content="TYOSİS Takip Yönetim Sistemleri için ücretsiz demo talep edin. Formu doldurun, ekibimiz size özel bir demo planlasın ve işinizi nasıl kolaylaştıracağını görün.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.tyosis.com/demo.html">
 
-    <!-- Open Graph (Facebook, LinkedIn vb.) -->
     <meta property="og:title" content="Demo Talep Et | TYOSİS">
     <meta property="og:description" content="Ücretsiz demo talep edin. Formu doldurun, ekibimiz size özel bir demo planlasın.">
     <meta property="og:type" content="website">
@@ -19,14 +17,12 @@
     <meta property="og:image" content="https://www.tyosis.com/logo(1).jpg">
     <meta property="og:site_name" content="TYOSİS Takip Yönetim Sistemleri">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Demo Talep Et | TYOSİS">
     <meta name="twitter:description" content="Ücretsiz demo talep edin. Formu doldurun, ekibimiz size özel bir demo planlasın.">
     <meta name="twitter:image" content="https://www.tyosis.com/logo(1).jpg">
     <meta name="twitter:site" content="@TYOSIS">
 
-    <!-- Schema.org (JSON-LD) Yapılandırılmış Veri -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -54,9 +50,7 @@
     }
     </script>
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font Ailesi -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -93,24 +87,20 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- ===== Header / Navigasyon ===== -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
             <a href="index.html" class="flex items-center space-x-2">
                 <img src="logo(1).jpg" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
                 <span class="text-lg font-bold text-primary-dark hidden sm:inline">TYOSİS Takip Yönetim Sistemleri</span>
                 <span class="text-xl font-bold text-primary-dark sm:hidden">TYOSİS</span>
             </a>
             
-            <!-- Mobil Menu Butonu (Hamburger) -->
             <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
 
-            <!-- Masaüstü Menü -->
             <div class="hidden lg:flex items-center space-x-6">
                 <a href="index.html" class="text-gray-600 hover:text-primary transition duration-300">Ana Sayfa</a>
                 <a href="products.html" class="text-gray-600 hover:text-primary transition duration-300">Ürünler</a>
@@ -122,7 +112,6 @@
             </div>
         </nav>
         
-        <!-- Mobil Menü (Gizli) -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg absolute top-full left-0 w-full">
             <a href="index.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Ana Sayfa</a>
             <a href="products.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Ürünler</a>
@@ -135,7 +124,6 @@
     </header>
 
     <main>
-        <!-- ===== Demo Talep Formu ===== -->
         <section id="demo-form" class="py-20 lg:py-28 bg-white">
             <div class="container mx-auto px-6">
                 <div class="max-w-3xl mx-auto">
@@ -148,7 +136,6 @@
                         </p>
                     </div>
 
-                    <!-- Demo Formu -->
                     <form id="demoForm" class="bg-gray-50 p-8 md:p-12 rounded-xl shadow-lg border border-gray-100 space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Ad Soyad</label>
@@ -181,13 +168,11 @@
                             </button>
                         </div>
                     </form>
-                    <!-- Form gönderim mesajı için alan -->
                     <div id="form-message" class="mt-6 text-center"></div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== Demo Süreci Bölümü ===== -->
         <section id="demo-process" class="py-20 lg:py-28 bg-gray-100">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -200,7 +185,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <!-- Özellik 1: Canlı Demo -->
                     <div class="bg-white p-8 rounded-xl shadow-lg text-center">
                         <div class="flex items-center justify-center w-16 h-16 bg-secondary text-white rounded-full mx-auto mb-6">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -209,7 +193,6 @@
                         <p class="text-gray-600">Seçtiğiniz sistemi canlı olarak görecek, tüm özelliklerini test edebileceksiniz.</p>
                     </div>
 
-                    <!-- Özellik 2: Özelleştirme -->
                     <div class="bg-white p-8 rounded-xl shadow-lg text-center">
                         <div class="flex items-center justify-center w-16 h-16 bg-secondary text-white rounded-full mx-auto mb-6">
                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -218,7 +201,6 @@
                         <p class="text-gray-600">İşinize özel nasıl özelleştirmeler yapabileceğimizi göstereceğiz.</p>
                     </div>
 
-                    <!-- Özellik 3: Soru & Cevap -->
                     <div class="bg-white p-8 rounded-xl shadow-lg text-center">
                         <div class="flex items-center justify-center w-16 h-16 bg-secondary text-white rounded-full mx-auto mb-6">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
@@ -232,7 +214,6 @@
 
     </main>
 
-    <!-- ===== YENİ Chat Botu HTML (JS'den ÖNCEYE TAŞINDI) ===== -->
     <style>
         /* Chat ikonu ve widget stilleri */
         #chat-icon {
@@ -275,14 +256,11 @@
         }
     </style>
 
-    <!-- Chat İkonu -->
     <div id="chat-icon">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.62 3.38a1.5 1.5 0 00-2.12 0l-1.92 1.92A9.95 9.95 0 0012 4C6.48 4 2 8.48 2 14c0 2.76 1.12 5.26 2.93 7.07l-1.7 1.7a1.5 1.5 0 002.12 2.12l1.7-1.7A9.95 9.95 0 0012 24c5.52 0 10-4.48 10-10 0-2.76-1.12-5.26-2.93-7.07l1.7-1.7a1.5 1.5 0 000-2.12zM12 22c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path><path d="M16.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM7.5 11.5c-.28 0-.5.22-.5.5v1c0 .28.22.5.5.5s.5-.22.5-.5v-1c0-.28-.22-.5-.5-.5zM12 16.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 11.5 12 11.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
     </div>
 
-    <!-- Chat Widget -->
     <div id="chat-widget" class="hidden opacity-0">
-        <!-- Header -->
         <div class="bg-primary text-white p-4 flex justify-between items-center">
             <div>
                 <h3 class="font-bold text-lg">TYOSİS Destek</h3>
@@ -292,11 +270,8 @@
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
             </button>
         </div>
-        <!-- Mesajlar -->
         <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-gray-100">
-            <!-- Mesajlar buraya eklenecek -->
-        </div>
-        <!-- Input Alanı -->
+            </div>
         <div id="chat-input-area" class="p-4 bg-white border-t border-gray-200 hidden">
             <div class="flex gap-2">
                 <input type="text" id="chat-input" class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary" placeholder="Mesajınızı yazın...">
@@ -307,11 +282,9 @@
         </div>
     </div>
 
-    <!-- ===== Footer Bölümü ===== -->
     <footer id="contact" class="bg-gray-900 text-gray-300 py-16">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-                <!-- Bölüm 1: Hakkında -->
                 <div>
                     <a href="index.html" class="flex items-center space-x-2 mb-4">
                         <img src="logo(1).jpg" alt="TYOSİS Logo" class="h-10 w-10 object-contain">
@@ -322,7 +295,6 @@
                     </p>
                 </div>
                 
-                <!-- Bölüm 2: Hızlı Linkler -->
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Hızlı Linkler</h4>
                     <ul class="space-y-2">
@@ -334,7 +306,6 @@
                     </ul>
                 </div>
 
-                <!-- Bölüm 3: İletişim -->
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">İletişim</h4>
                     <ul class="space-y-3">
@@ -353,7 +324,6 @@
                     </ul>
                 </div>
 
-                <!-- Bölüm 4: Sosyal Medya -->
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4">Sosyal Medya</h4>
                     <div class="flex space-x-4">
@@ -370,7 +340,6 @@
                 </div>
             </div>
 
-            <!-- Copyright -->
             <div class="border-t border-gray-700 mt-12 pt-8 text-center">
                 <p class="text-gray-500">
                     &copy; 2025 TYOSİS | Tüm Hakları Saklıdır.
@@ -380,17 +349,23 @@
     </footer>
 
 
-    <!-- ===== JavaScript ===== -->
-    <!-- Firebase SDK'ları -->
     <script type="module">
         // Firebase ve Firestore modüllerini import et
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { getFirestore, collection, addDoc, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+        // YENİ: Sizin statik Firebase yapılandırmanız
+        const firebaseConfig = {
+          apiKey: "AIzaSyAW5TcVrmGHrUvMtiWHyvSMobNg8AKLitE",
+          authDomain: "tyosispanel.firebaseapp.com",
+          projectId: "tyosispanel",
+          storageBucket: "tyosispanel.firebasestorage.app",
+          messagingSenderId: "1082615656645",
+          appId: "1:1082615656645:web:a7659598f5582d4de240ac"
+        };
+
         // Firebase'i başlat
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
         const db = getFirestore(app);
@@ -404,42 +379,39 @@
         // Firebase oturumunu yönet
         onAuthStateChanged(auth, async (user) => {
             if (user) {
-                // Kullanıcı zaten oturum açmış
                 userId = user.uid;
             } else {
-                // Kullanıcı oturum açmamış, token ile dene veya anonim giriş yap
                 try {
-                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                        await signInWithCustomToken(auth, __initial_auth_token);
-                        userId = auth.currentUser.uid;
-                    } else {
-                        await signInAnonymously(auth);
-                        userId = auth.currentUser.uid;
-                    }
+                    await signInAnonymously(auth);
+                    userId = auth.currentUser.uid;
                 } catch (error) {
                     console.error("Firebase Auth hatası:", error);
                     userId = 'anonim-' + Math.random().toString(36).substring(2, 9);
                 }
             }
             console.log("Kullanıcı ID:", userId);
-            // Veritabanı referansını ayarla (tüm talepler 'public' altına gidecek)
-            dbRef = collection(db, 'artifacts', appId, 'public', 'data', 'requests');
+            // YENİ: Veritabanı referansını 'demo_talepleri' olarak ayarla
+            dbRef = collection(db, 'demo_talepleri');
         });
 
-        // Veritabanına talep kaydetme fonksiyonu
+        // YENİ: Güncellenmiş Veritabanına kaydetme fonksiyonu
+        // Bu fonksiyon HEM FORM hem de CHATBOT tarafından kullanılacak
         async function saveRequest(data) {
             if (!dbRef) {
                 console.error("Veritabanı referansı hazır değil.");
-                // Hata durumunda da promise'i reject et
                 throw new Error("Veritabanı bağlantısı hazır değil.");
             }
-            // Başarılı olursa promise'i resolve et
+            
+            // Verinin nereden geldiğini belirle (form mu, chat mi?)
+            const source = data.type === 'demo_form' ? 'Website Form' : 'Website Chat';
+            
             await addDoc(dbRef, {
                 ...data,
+                source: source, // 'Website Form' veya 'Website Chat' yazacak
                 createdAt: serverTimestamp(),
                 userId: userId
             });
-            console.log("Talep başarıyla kaydedildi:", data.type);
+            console.log(`Talep (${source}) başarıyla kaydedildi:`, data);
         }
 
 
@@ -479,7 +451,7 @@
 
                     // Form verilerini al
                     const formData = {
-                        type: 'demo_form',
+                        type: 'demo_form', // Bu tip, 'saveRequest' fonksiyonunda kaynağı belirlemek için kullanılır
                         name: demoForm.name.value,
                         company: demoForm.company.value,
                         email: demoForm.email.value,
@@ -488,7 +460,7 @@
                     };
 
                     try {
-                        // Firebase'e kaydet
+                        // Firebase'e kaydet (Güncellenmiş fonksiyonu kullanır)
                         await saveRequest(formData);
 
                         // Başarı mesajı göster
@@ -518,7 +490,7 @@
             }
 
 
-            // ===== CHAT BOTU JS Kodu =====
+            // ===== CHAT BOTU JS Kodu (Bu da güncellenmiş saveRequest'i kullanır) =====
             const chatIcon = document.getElementById('chat-icon');
             const chatWidget = document.getElementById('chat-widget');
             const chatClose = document.getElementById('chat-close');
@@ -631,9 +603,9 @@
                         addBotMessage("Tyosis'i tercih ettiğiniz için teşekkürler. Tyosis Ekibi en kısa zamanda sizlere ulaşarak bilgi verecektir. Görüşmek üzere");
                         
                         try {
-                            // Veriyi Firebase'e kaydet
+                            // Veriyi Firebase'e kaydet (Güncellenmiş fonksiyonu kullanır)
                             await saveRequest({
-                                type: 'chat',
+                                type: 'chat', // Bu tip, 'saveRequest' fonksiyonunda kaynağı belirlemek için kullanılır
                                 name: chatData.name,
                                 phone: chatData.phone,
                                 sector: chatData.sector
@@ -705,7 +677,5 @@
 
     </script>
     
-    <!-- ===== YENİ Chat Botu HTML (BURADAN SİLİNDİ) ===== -->
-
 </body>
 </html>
