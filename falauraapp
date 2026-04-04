@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    const userAgent = navigator.userAgent || navigator.vendor;
+
+    if (/android/i.test(userAgent)) {
+      window.location.href = "https://play.google.com/store/apps/details?id=com.tyosis.falaura";
+    } else if (/iPad|iPhone|iPod/.test(userAgent)) {
+      window.location.href = "https://apps.apple.com/";
+    } else {
+      window.location.href = "https://falaura.com";
+    }
+  </script>
+</head>
+<body>
+  Yönlendiriliyorsunuz...
+</body>
+</html>
